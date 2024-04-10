@@ -1,10 +1,13 @@
+class Page {
+    constructor(name, link) {
+        this.name = name;
+        this.link = link;
+      }
+}
+
 let sites = [
-    "https://www.google.com",
-    "/button"
-];
-let labels = [
-    "google",
-    "button"
+    new Page("google","https://www.google.com"),
+    new Page("button","/button"),
 ]
 
 let index = 0;
@@ -12,11 +15,11 @@ let index = 0;
 function update(){
     console.log(index);
     try {
-        $(".disp").text(labels[index]);
+        $(".disp").text(sites[index].name);
     } catch (err){
-        $(".disp").text(sites[index]);
+        $(".disp").text(sites[index].link);
     }
-    $(".disp").attr("href",sites[index]);
+    $(".disp").attr("href",sites[index].link);
     
 }
 update();

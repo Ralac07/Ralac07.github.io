@@ -1,0 +1,1 @@
+.disp,.next,.prev{place-content:center;display:grid}.container,.disp,.next,.options,.prev{display:grid}.container{width:300px;aspect-ratio:1;background:silver;grid-template-columns:max-content auto max-content}.next,.prev{font-size:3em}.unselectable{-webkit-user-select:none;-ms-user-select:none;user-select:none}.options{grid-template-rows:auto}
