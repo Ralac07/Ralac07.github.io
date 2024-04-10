@@ -6,7 +6,7 @@ class Page {
 }
 
 let sites = [
-    new Page("google","https://www.google.com"),
+    new Page("Calculator","/calculator"),
     new Page("button","/button"),
 ]
 

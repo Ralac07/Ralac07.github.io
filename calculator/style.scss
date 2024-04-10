@@ -1,0 +1,68 @@
+$btnWidth:75px;
+$btnHeight:$btnWidth / 2.3;
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4,$btnWidth);
+    grid-template-rows: repeat(6,$btnHeight);
+    grid-gap: 5px;
+}
+
+.btn {
+    width:100%;
+    height:100%;
+    background:lightgrey;
+    font-weight: bold;
+    display: grid;
+    place-content: center;
+    // margin:5px;
+}
+
+#submit {
+    // grid-column: 3 / 5;
+    opacity: 1;
+}
+
+.resContainer {
+    grid-column: 1 / 5;
+    background: silver;
+    position: relative;
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+
+.WIP {
+    opacity: 0.3;
+}
+.result {
+    position: relative;
+    // text-align: right;
+    // width:100%;
+    // display: grid;
+    // place-content: end;
+}
+
+.output {
+    position: absolute;
+    right:0;
+    bottom:0;
+}
+
+#memory {
+    display: grid;
+    grid-template-columns: calc(50% - 2.5px) calc(50% - 2.5px);
+    grid-template-rows: 100%;
+    background:none;
+    grid-gap: 5px;
+
+}
+
+#memory>div{
+    display: inline-block;
+    background:lightgrey;
+ }
