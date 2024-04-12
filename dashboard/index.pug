@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="style.css")
+        script(src="node_modules/jquery/dist/jquery.min.js") 
+    body
+        .box
+            .navbar
+                a.btn.disabledLink(href="https://yandex.com")
+                    img(src="/images/Yandex_Browser_logo.png", alt="Yandex Logo").icon
+                a.btn.disabledLink(href="https://duckduckgo.com/")
+                    img(src="/images/duckduckgo-icon-512x512-zp12dd1l.png", alt="DuckDuckGo Icon").icon
+                a.btn.disabledLink(href="https://bing.com")
+                    img(src="/images/bing-color-icon.webp" alt="Bing Logo").icon
+
+                a.btn.disabledLink(href="https://google.com")
+                    img(src="/images/google-icon-2048x2048-czn3g8x8.png", alt="Google Logo").icon
+
+        script(src="script.dev.js")
