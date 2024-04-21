@@ -19,14 +19,14 @@ function update(){
 reset();
 $(".num").on("click",function(){
     data.push($(this).text()==undefined?"":$(this).text());
-    index += 1;
+    //index += 1;
     update();
 });
 
-$("#flip").on("click",function(){
-    data[index-1] *= -1;
-    update();
-});
+// $("#flip").on("click",function(){
+//     data[index] *= -1;
+//     update();
+// });
 
 
 $("#c").on("click",function(){

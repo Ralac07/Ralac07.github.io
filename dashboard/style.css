@@ -47,7 +47,7 @@
   aspect-ratio: 1;
 }
 .navbar > *:hover {
-  height: 150%;
+  height: 125%;
 }
 
 .disabledLink :link {
