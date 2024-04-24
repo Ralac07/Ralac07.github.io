@@ -7,7 +7,8 @@ class Page {
 
 let sites = [
     new Page("Calculator","/calculator"),
-    new Page("browsers","/dashboard"),
+    new Page("Browsers","/dashboard"),
+    new Page("Clock", "/clock")
 ]
 
 let index = 0;

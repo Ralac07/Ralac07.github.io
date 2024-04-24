@@ -1,0 +1,31 @@
+:root {
+  --a:0;
+  --b:0;
+  --c:0;
+  --d:0;
+}
+
+#myCanvas {
+  position: absolute;
+  height: min(90vw, 90vh);
+  width: min(90vw, 90vh);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(to top right, hsla(var(--a), 100%, 50%, 0.3), hsla(var(--b), 100%, 50%, 0.3)), linear-gradient(to top left, hsla(var(--c), 100%, 50%, 0.3), hsla(var(--d), 100%, 50%, 0.3));
+}
+
+#outline {
+  position: absolute;
+  height: min(95vw, 95vh);
+  width: min(95vw, 95vh);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: hsl(calc((var(--a) + var(--b) + var(--c) + var(--d)) / 4), 100%, 70%);
+  --blur: 32px;
+  filter: blur(var(--blur));
+  -webkit-filter: blur(var(--blur));
+}

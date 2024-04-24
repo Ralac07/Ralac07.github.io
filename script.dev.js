@@ -9,7 +9,7 @@ var Page = function Page(name, link) {
   this.link = link;
 };
 
-var sites = [new Page("Calculator", "/calculator"), new Page("browsers", "/dashboard")];
+var sites = [new Page("Calculator", "/calculator"), new Page("Browsers", "/dashboard"), new Page("Clock", "/clock")];
 var index = 0;
 
 function update() {
