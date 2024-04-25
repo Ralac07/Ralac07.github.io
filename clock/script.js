@@ -93,10 +93,28 @@ setInterval(function(){
     for (let index = 1; index <= 12; index++) {
         // ctx.moveTo();
         
-        ctx.font = `${fontSize}px Arial`;
-        [x,y] = getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (85/200)*size)
-        ctx.fillText(index,x-(fontSize/2),y+(fontSize/2));   
+        // ctx.moveTo(size/2, size/2);
+        ctx.font = `${fontSize}px firacode`;
+        [x,y] = getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (80/200)*size);
+        y *= 0.975;
+        if (![10,11,12].includes(index)) {
+            ctx.fillText(index,(x*1.03)-(fontSize/2),y+(fontSize/2));
+        } else {
+            ctx.fillText(index,x-(fontSize/2),y+(fontSize/2));
+        }
+        
+        
+
+        ctx.moveTo(...getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size));
+        ctx.lineTo(...getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (95/200)*size));
+        ctx.strokeStyle = "black";
+        ctx.stroke();
     }
+
+    // for (let index = 0; index < array.length; index++) {
+    //     ctx.moveTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (80/200)*size));
+    //     ctx.lineTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size));
+    // }
 
     document.documentElement.style.setProperty("--a",a);
     document.documentElement.style.setProperty("--b",b);

@@ -76,3 +76,8 @@
   width: 100%;
   font-size: 500%;
 }
+
+@font-face {
+  font-family: "firacode";
+  src: url("/clock/font/Fira_Code_v6.2/ttf/FiraCode-Regular.ttf");
+}

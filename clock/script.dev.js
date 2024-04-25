@@ -102,17 +102,37 @@ setInterval(function () {
   ctx.stroke();
 
   for (var index = 1; index <= 12; index++) {
-    // ctx.moveTo();
-    ctx.font = "".concat(fontSize, "px Arial");
+    var _ctx4, _ctx5;
 
-    var _getPos = getPos(index % 12 * (360 / 12) - 90, [size / 2, size / 2], 85 / 200 * size);
+    // ctx.moveTo();
+    // ctx.moveTo(size/2, size/2);
+    ctx.font = "".concat(fontSize, "px firacode");
+
+    var _getPos = getPos(index % 12 * (360 / 12) - 90, [size / 2, size / 2], 80 / 200 * size);
 
     var _getPos2 = _slicedToArray(_getPos, 2);
 
     x = _getPos2[0];
     y = _getPos2[1];
-    ctx.fillText(index, x - fontSize / 2, y + fontSize / 2);
-  }
+    y *= 0.975;
+
+    if (![10, 11, 12].includes(index)) {
+      ctx.fillText(index, x * 1.03 - fontSize / 2, y + fontSize / 2);
+    } else {
+      ctx.fillText(index, x - fontSize / 2, y + fontSize / 2);
+    }
+
+    (_ctx4 = ctx).moveTo.apply(_ctx4, _toConsumableArray(getPos(index % 12 * (360 / 12) - 90, [size / 2, size / 2], 90 / 200 * size)));
+
+    (_ctx5 = ctx).lineTo.apply(_ctx5, _toConsumableArray(getPos(index % 12 * (360 / 12) - 90, [size / 2, size / 2], 95 / 200 * size)));
+
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+  } // for (let index = 0; index < array.length; index++) {
+  //     ctx.moveTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (80/200)*size));
+  //     ctx.lineTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size));
+  // }
+
 
   document.documentElement.style.setProperty("--a", a);
   document.documentElement.style.setProperty("--b", b);
