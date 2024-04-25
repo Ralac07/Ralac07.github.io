@@ -36,6 +36,7 @@ let d = (Math.random() * 360)%360;
 let n = 100;
 let x = 0;
 let y = 0;
+let fontSize = 85;
 // let canvas = document.createElement("canvas");
 // canvas.setAttribute("id","myCanvas");
 // canvas.setAttribute("width",size);
@@ -91,9 +92,10 @@ setInterval(function(){
 
     for (let index = 1; index <= 12; index++) {
         // ctx.moveTo();
-        ctx.font = "50px Arial";
-        [x,y] = getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size)
-        ctx.fillText(index,x-25,y+25);   
+        
+        ctx.font = `${fontSize}px Arial`;
+        [x,y] = getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (85/200)*size)
+        ctx.fillText(index,x-(fontSize/2),y+(fontSize/2));   
     }
 
     document.documentElement.style.setProperty("--a",a);
