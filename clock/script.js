@@ -50,7 +50,7 @@ var ctx = c.getContext("2d");
 setInterval(function(){
 	second = new Date().getSeconds() + new Date().getMilliseconds() / 1000
 	minute = new Date().getMinutes() + second/60;
-    hour = new Date().getHours() / 2 + minute/60;
+    hour = (new Date().getHours()%12) + minute/60;
 	
     ctx.clearRect(0, 0, c.width, c.height);
 	// ctx.strokeStyle = "black";
@@ -66,7 +66,7 @@ setInterval(function(){
     // ctx.strokeStyle = "black";
 	
     ctx.moveTo(size/2, size/2);
-    ctx.lineTo(...getPos((((hour%12) * (360/24)) - 90), [size/2,size/2], (50/200)*size));
+    ctx.lineTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (50/200)*size));
     ctx.moveTo(size/2, size/2);
 	
 	// ctx.beginPath();
