@@ -85,7 +85,7 @@ setInterval(function(){
 	ctx.moveTo(size/2, size/2);
 	ctx.lineTo(...getPos((((second%60) * (360/60)) - 90), [size/2,size/2], (80/200)*size));
     ctx.lineWidth = 6;
-	// ctx.strokeStyle = "red";
+	ctx.strokeStyle = "red";
     ctx.stroke();
 
 
@@ -98,17 +98,18 @@ setInterval(function(){
         [x,y] = getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (80/200)*size);
         y *= 0.975;
         if (![10,11,12].includes(index)) {
-            ctx.fillText(index,(x*1.03)-(fontSize/2),y+(fontSize/2));
+            ctx.fillText(index,(x * 1.03)-(fontSize/2),y+(fontSize/2));
         } else {
-            ctx.fillText(index,x-(fontSize/2),y+(fontSize/2));
+            ctx.fillText(index,(x * 0.985)-(fontSize/2),y+(fontSize/2));
         }
         
         
-
+        ctx.beginPath();
         ctx.moveTo(...getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size));
         ctx.lineTo(...getPos((((index%12) * (360/12)) - 90), [size/2,size/2], (95/200)*size));
         ctx.strokeStyle = "black";
         ctx.stroke();
+        ctx.strokeStyle = "red";
     }
 
     // for (let index = 0; index < array.length; index++) {

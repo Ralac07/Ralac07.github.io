@@ -97,8 +97,8 @@ setInterval(function () {
 
   (_ctx3 = ctx).lineTo.apply(_ctx3, _toConsumableArray(getPos(second % 60 * (360 / 60) - 90, [size / 2, size / 2], 80 / 200 * size)));
 
-  ctx.lineWidth = 6; // ctx.strokeStyle = "red";
-
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = "red";
   ctx.stroke();
 
   for (var index = 1; index <= 12; index++) {
@@ -119,8 +119,10 @@ setInterval(function () {
     if (![10, 11, 12].includes(index)) {
       ctx.fillText(index, x * 1.03 - fontSize / 2, y + fontSize / 2);
     } else {
-      ctx.fillText(index, x - fontSize / 2, y + fontSize / 2);
+      ctx.fillText(index, x * 0.985 - fontSize / 2, y + fontSize / 2);
     }
+
+    ctx.beginPath();
 
     (_ctx4 = ctx).moveTo.apply(_ctx4, _toConsumableArray(getPos(index % 12 * (360 / 12) - 90, [size / 2, size / 2], 90 / 200 * size)));
 
@@ -128,6 +130,7 @@ setInterval(function () {
 
     ctx.strokeStyle = "black";
     ctx.stroke();
+    ctx.strokeStyle = "red";
   } // for (let index = 0; index < array.length; index++) {
   //     ctx.moveTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (80/200)*size));
   //     ctx.lineTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size));
