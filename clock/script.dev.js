@@ -101,8 +101,8 @@ setInterval(function () {
   document.documentElement.style.setProperty("--b", b);
   document.documentElement.style.setProperty("--c", d);
   document.documentElement.style.setProperty("--d", e);
-  a = (a + Math.random() * (1.1528981518 / n)) % 360;
-  b = (b + Math.random() * (1.3229182657 / n)) % 360;
-  d = (d + Math.random() * (1.2536197933 / n)) % 360;
-  e = (e + Math.random() * (1.4069221192 / n)) % 360;
-}, 100 / n);
+  a = (a + Math.random() * (n * 0.01528981518)) % 360;
+  b = (b + Math.random() * (n * 0.03229182657)) % 360;
+  d = (d + Math.random() * (n * 0.02536197933)) % 360;
+  e = (e + Math.random() * (n * 0.04069221192)) % 360;
+}, n);

@@ -26,8 +26,8 @@
 
     background:
     linear-gradient(to top right, hsla(var(--a), 100%, 50%, 0.3), hsla(var(--b), 100%, 50%, 0.3)),
-    linear-gradient(to top left, hsla(var(--c), 100%, 50%, 0.3), hsla(var(--d), 100%, 50%, 0.3));
-    
+    linear-gradient(to top left, hsla(var(--c), 100%, 50%, 0.3), hsla(var(--d), 100%, 50%, 0.3)),
+    repeating-conic-gradient(black 0deg 0deg, transparent 1deg 30deg);
     
     // filter: blur(8px);
     // -webkit-filter: blur(8px);
