@@ -44,7 +44,7 @@ var a = Math.random() * 360 % 360;
 var b = Math.random() * 360 % 360;
 var e = Math.random() * 360 % 360;
 var d = Math.random() * 360 % 360;
-var n = 100;
+var n = 1;
 var x = 0;
 var y = 0;
 var fontSize = 85; // let canvas = document.createElement("canvas");
