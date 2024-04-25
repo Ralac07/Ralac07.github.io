@@ -5,7 +5,7 @@
   --d:0;
 }
 
-#myCanvas {
+#myCanvas, #outline {
   position: absolute;
   height: min(90vw, 90vh);
   width: min(90vw, 90vh);
@@ -13,19 +13,65 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: linear-gradient(to top right, hsla(var(--a), 100%, 50%, 0.3), hsla(var(--b), 100%, 50%, 0.3)), linear-gradient(to top left, hsla(var(--c), 100%, 50%, 0.3), hsla(var(--d), 100%, 50%, 0.3)), repeating-conic-gradient(black 0deg 0deg, transparent 1deg 30deg);
+}
+
+#myCanvas {
+  background: linear-gradient(to top right, hsla(var(--a), 100%, 50%, 0.3), hsla(var(--b), 100%, 50%, 0.3)), linear-gradient(to top left, hsla(var(--c), 100%, 50%, 0.3), hsla(var(--d), 100%, 50%, 0.3));
 }
 
 #outline {
+  z-index: 5;
+  display: grid;
+}
+#outline .n1 {
   position: absolute;
-  height: min(95vw, 95vh);
-  width: min(95vw, 95vh);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: hsl(calc((var(--a) + var(--b) + var(--c) + var(--d)) / 4), 100%, 70%);
-  --blur: 32px;
-  filter: blur(var(--blur));
-  -webkit-filter: blur(var(--blur));
+}
+#outline .n2 {
+  position: absolute;
+}
+#outline .n3 {
+  position: absolute;
+  place-self: center;
+  text-align: right;
+  width: 100%;
+  font-size: 500%;
+}
+#outline .n4 {
+  position: absolute;
+}
+#outline .n5 {
+  position: absolute;
+}
+#outline .n6 {
+  position: absolute;
+  bottom: 0%;
+  text-align: center;
+  width: 100%;
+  font-size: 500%;
+}
+#outline .n7 {
+  position: absolute;
+}
+#outline .n8 {
+  position: absolute;
+}
+#outline .n9 {
+  position: absolute;
+  place-self: center;
+  text-align: left;
+  width: 100%;
+  font-size: 500%;
+}
+#outline .n10 {
+  position: absolute;
+}
+#outline .n11 {
+  position: absolute;
+}
+#outline .n12 {
+  position: absolute;
+  top: 0%;
+  text-align: center;
+  width: 100%;
+  font-size: 500%;
 }

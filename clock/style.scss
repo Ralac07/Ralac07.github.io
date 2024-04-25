@@ -7,7 +7,7 @@
 
 
 
-#myCanvas {
+#myCanvas,#outline {
 
     position: absolute;
     height: min(90vw,90vh);
@@ -15,35 +15,78 @@
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    // aspect-ratio: 1;
     border-radius: 50%;
 
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // height: 100%;
-
+}
+#myCanvas {
     background:
     linear-gradient(to top right, hsla(var(--a), 100%, 50%, 0.3), hsla(var(--b), 100%, 50%, 0.3)),
     linear-gradient(to top left, hsla(var(--c), 100%, 50%, 0.3), hsla(var(--d), 100%, 50%, 0.3)),
-    repeating-conic-gradient(black 0deg 0deg, transparent 1deg 30deg);
+    // repeating-conic-gradient(black 0deg 0deg, transparent 1deg 30deg);
+}
+
     
     // filter: blur(8px);
     // -webkit-filter: blur(8px);
-}
-
 
 #outline {
-    position: absolute;
-    height: min(95vw,95vh);
-    width: min(95vw,95vh);
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    // aspect-ratio: 1;
-    border-radius: 50%;
-    background: hsl(calc((var(--a) + var(--b) + var(--c) + var(--d)) / 4) , 100%, 70%);
+    z-index: 5;
+    display: grid;
+    
+    .n1 {
+        position: absolute;
+    }
+    .n2 {
+        position: absolute;
+    }
+    .n3 {
+        position: absolute;
+        place-self: center;
+        text-align: right;
+        width: 100%;
+        font-size: 500%;
+        // background: silver;
+    }
+    .n4 {
+        position: absolute;
+    }
+    .n5 {
+        position: absolute;
+    }
+    .n6 {
+        position: absolute;
+        bottom: 0%;
+        text-align: center;
+        width: 100%;
+        font-size: 500%;
+    }
+    .n7 {
+        position: absolute;
+    }
+    .n8 {
+        position: absolute;
+    }
+    .n9 {
+        position: absolute;
+        place-self: center;
+        text-align: left;
+        width: 100%;
+        font-size: 500%;
+    }
+    .n10 {
+        position: absolute;
+    }
+    .n11 {
+        position: absolute;
+    }
+    .n12 {
+        position: absolute;
+        top: 0%;
+        text-align: center;
+        width: 100%;
+        font-size: 500%;
+    }
+    // background: hsl(calc((var(--a) + var(--b) + var(--c) + var(--d)) / 4) , 100%, 70%);
     // background-image: radial-gradient(
     //     hsl(var(--a),100%, 50%) 60%,
     //     hsl(var(--b),100%, 50%),
@@ -54,7 +97,7 @@
     // background:
     // linear-gradient(to top right, hsla(var(--d), 100%, 50%, 0.3), hsla(var(--c), 100%, 50%, 0.3)),
     // linear-gradient(to top left, hsla(var(--b), 100%, 50%, 0.3), hsla(var(--a), 100%, 50%, 0.3));
-    --blur: 32px;
-    filter: blur(var(--blur));
-    -webkit-filter: blur(var(--blur));
+    // --blur: 32px;
+    // filter: blur(var(--blur));
+    // -webkit-filter: blur(var(--blur));
 }
