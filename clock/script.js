@@ -49,6 +49,14 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 setInterval(function(){
 
+    
+        
+	second = new Date().getSeconds() + new Date().getMilliseconds() / 1000
+	minute = new Date().getMinutes() + second/60;
+    hour = (new Date().getHours()%12) + minute/60;
+	
+    ctx.clearRect(0, 0, c.width, c.height);
+
     for (let index = 1; index <= 12; index++) {
         // ctx.moveTo();
         
@@ -68,12 +76,8 @@ setInterval(function(){
         ctx.stroke();
         ctx.strokeStyle = "red";
     }
-        
-	second = new Date().getSeconds() + new Date().getMilliseconds() / 1000
-	minute = new Date().getMinutes() + second/60;
-    hour = (new Date().getHours()%12) + minute/60;
-	
-    ctx.clearRect(0, 0, c.width, c.height);
+
+
 	// ctx.strokeStyle = "black";
     c = document.getElementById("myCanvas");
     ctx = c.getContext("2d");

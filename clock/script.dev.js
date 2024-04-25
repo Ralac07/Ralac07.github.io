@@ -61,6 +61,11 @@ var ctx = c.getContext("2d");
 setInterval(function () {
   var _ctx3, _ctx4, _ctx5;
 
+  second = new Date().getSeconds() + new Date().getMilliseconds() / 1000;
+  minute = new Date().getMinutes() + second / 60;
+  hour = new Date().getHours() % 12 + minute / 60;
+  ctx.clearRect(0, 0, c.width, c.height);
+
   for (var index = 1; index <= 12; index++) {
     var _ctx, _ctx2;
 
@@ -91,12 +96,8 @@ setInterval(function () {
     ctx.strokeStyle = "black";
     ctx.stroke();
     ctx.strokeStyle = "red";
-  }
+  } // ctx.strokeStyle = "black";
 
-  second = new Date().getSeconds() + new Date().getMilliseconds() / 1000;
-  minute = new Date().getMinutes() + second / 60;
-  hour = new Date().getHours() % 12 + minute / 60;
-  ctx.clearRect(0, 0, c.width, c.height); // ctx.strokeStyle = "black";
 
   c = document.getElementById("myCanvas");
   ctx = c.getContext("2d"); // ctx.beginPath();
