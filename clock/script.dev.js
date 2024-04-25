@@ -131,11 +131,16 @@ setInterval(function () {
     ctx.strokeStyle = "black";
     ctx.stroke();
     ctx.strokeStyle = "red";
-  } // for (let index = 0; index < array.length; index++) {
+  }
+
+  ctx.beginPath();
+  ctx.fillStyle = "black";
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, 15, 0, 2 * Math.PI);
+  ctx.fill(); // for (let index = 0; index < array.length; index++) {
   //     ctx.moveTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (80/200)*size));
   //     ctx.lineTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size));
   // }
-
 
   document.documentElement.style.setProperty("--a", a);
   document.documentElement.style.setProperty("--b", b);
