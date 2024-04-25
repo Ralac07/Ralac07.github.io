@@ -78,6 +78,23 @@ setInterval(function(){
     }
 
 
+
+    for (let index = 1; index <= 60; index++) {
+        // ctx.moveTo();
+        
+        // ctx.moveTo(size/2, size/2);
+        ctx.font = `${fontSize}px firacode`;
+        // [x,y] = getPos((((index%60) * (360/60)) - 90), [size/2,size/2], (90/200)*size);
+        ctx.beginPath();
+        ctx.moveTo(...getPos((((index%60) * (360/60)) - 90), [size/2,size/2], (93/200)*size));
+        ctx.lineTo(...getPos((((index%60) * (360/60)) - 90), [size/2,size/2], (95/200)*size));
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+        ctx.strokeStyle = "red";
+    }
+
+
+
 	// ctx.strokeStyle = "black";
     c = document.getElementById("myCanvas");
     ctx = c.getContext("2d");

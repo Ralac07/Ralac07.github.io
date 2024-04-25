@@ -59,7 +59,7 @@ var second = 0;
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 setInterval(function () {
-  var _ctx3, _ctx4, _ctx5;
+  var _ctx5, _ctx6, _ctx7;
 
   second = new Date().getSeconds() + new Date().getMilliseconds() / 1000;
   minute = new Date().getMinutes() + second / 60;
@@ -96,6 +96,24 @@ setInterval(function () {
     ctx.strokeStyle = "black";
     ctx.stroke();
     ctx.strokeStyle = "red";
+  }
+
+  for (var _index = 1; _index <= 60; _index++) {
+    var _ctx3, _ctx4;
+
+    // ctx.moveTo();
+    // ctx.moveTo(size/2, size/2);
+    ctx.font = "".concat(fontSize, "px firacode"); // [x,y] = getPos((((index%60) * (360/60)) - 90), [size/2,size/2], (90/200)*size);
+
+    ctx.beginPath();
+
+    (_ctx3 = ctx).moveTo.apply(_ctx3, _toConsumableArray(getPos(_index % 60 * (360 / 60) - 90, [size / 2, size / 2], 93 / 200 * size)));
+
+    (_ctx4 = ctx).lineTo.apply(_ctx4, _toConsumableArray(getPos(_index % 60 * (360 / 60) - 90, [size / 2, size / 2], 95 / 200 * size)));
+
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    ctx.strokeStyle = "red";
   } // ctx.strokeStyle = "black";
 
 
@@ -111,12 +129,12 @@ setInterval(function () {
 
   ctx.moveTo(size / 2, size / 2);
 
-  (_ctx3 = ctx).lineTo.apply(_ctx3, _toConsumableArray(getPos(hour % 12 * (360 / 12) - 90, [size / 2, size / 2], 50 / 200 * size)));
+  (_ctx5 = ctx).lineTo.apply(_ctx5, _toConsumableArray(getPos(hour % 12 * (360 / 12) - 90, [size / 2, size / 2], 50 / 200 * size)));
 
   ctx.moveTo(size / 2, size / 2); // ctx.beginPath();
   // ctx.strokeStyle = "black";
 
-  (_ctx4 = ctx).lineTo.apply(_ctx4, _toConsumableArray(getPos(minute % 60 * (360 / 60) - 90, [size / 2, size / 2], 80 / 200 * size)));
+  (_ctx6 = ctx).lineTo.apply(_ctx6, _toConsumableArray(getPos(minute % 60 * (360 / 60) - 90, [size / 2, size / 2], 80 / 200 * size)));
 
   ctx.moveTo(size / 2, size / 2); // ctx.closePath();
 
@@ -128,7 +146,7 @@ setInterval(function () {
   ctx.lineWidth = 2;
   ctx.moveTo(size / 2, size / 2);
 
-  (_ctx5 = ctx).lineTo.apply(_ctx5, _toConsumableArray(getPos(second % 60 * (360 / 60) - 90, [size / 2, size / 2], 80 / 200 * size)));
+  (_ctx7 = ctx).lineTo.apply(_ctx7, _toConsumableArray(getPos(second % 60 * (360 / 60) - 90, [size / 2, size / 2], 80 / 200 * size)));
 
   ctx.lineWidth = 6;
   ctx.strokeStyle = "red";
