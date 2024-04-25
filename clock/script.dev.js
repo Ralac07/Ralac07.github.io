@@ -44,7 +44,9 @@ var a = Math.random() * 360 % 360;
 var b = Math.random() * 360 % 360;
 var e = Math.random() * 360 % 360;
 var d = Math.random() * 360 % 360;
-var n = 100; // let canvas = document.createElement("canvas");
+var n = 100;
+var x = 0;
+var y = 0; // let canvas = document.createElement("canvas");
 // canvas.setAttribute("id","myCanvas");
 // canvas.setAttribute("width",size);
 // canvas.setAttribute("height",size);
@@ -97,6 +99,20 @@ setInterval(function () {
   ctx.lineWidth = 6; // ctx.strokeStyle = "red";
 
   ctx.stroke();
+
+  for (var index = 1; index <= 12; index++) {
+    // ctx.moveTo();
+    ctx.font = "50px Arial";
+
+    var _getPos = getPos(index % 12 * (360 / 12) - 90, [size / 2, size / 2], 90 / 200 * size);
+
+    var _getPos2 = _slicedToArray(_getPos, 2);
+
+    x = _getPos2[0];
+    y = _getPos2[1];
+    ctx.fillText(index, x - 25, y + 25);
+  }
+
   document.documentElement.style.setProperty("--a", a);
   document.documentElement.style.setProperty("--b", b);
   document.documentElement.style.setProperty("--c", d);
