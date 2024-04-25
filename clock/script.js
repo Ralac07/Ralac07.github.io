@@ -102,6 +102,7 @@ setInterval(function(){
     document.documentElement.style.setProperty("--b",b);
     document.documentElement.style.setProperty("--c",d);
     document.documentElement.style.setProperty("--d",e);
+    document.querySelector("#myCanvas").style.setProperty("opacity","1");
     a = (a + Math.random() * (n * 0.01528981518)) % 360;
     b = (b + Math.random() * (n * 0.03229182657)) % 360;
     d = (d + Math.random() * (n * 0.02536197933)) % 360;

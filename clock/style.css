@@ -16,6 +16,7 @@
 }
 
 #myCanvas {
+  opacity: 0;
   background: linear-gradient(to top right, hsla(var(--a), 100%, 50%, 0.3), hsla(var(--b), 100%, 50%, 0.3)), linear-gradient(to top left, hsla(var(--c), 100%, 50%, 0.3), hsla(var(--d), 100%, 50%, 0.3));
 }
 
