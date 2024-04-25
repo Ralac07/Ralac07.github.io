@@ -75,7 +75,7 @@ setInterval(function () {
 
   ctx.moveTo(size / 2, size / 2);
 
-  (_ctx = ctx).lineTo.apply(_ctx, _toConsumableArray(getPos(hour % 12 * (360 / 12) + 90, [size / 2, size / 2], 50 / 200 * size)));
+  (_ctx = ctx).lineTo.apply(_ctx, _toConsumableArray(getPos(hour % 12 * (360 / 24) - 90, [size / 2, size / 2], 50 / 200 * size)));
 
   ctx.moveTo(size / 2, size / 2); // ctx.beginPath();
   // ctx.strokeStyle = "black";

@@ -63,7 +63,7 @@ setInterval(function(){
     // ctx.strokeStyle = "black";
 	
     ctx.moveTo(size/2, size/2);
-    ctx.lineTo(...getPos((((hour%12) * (360/12)) + 90), [size/2,size/2], (50/200)*size));
+    ctx.lineTo(...getPos((((hour%12) * (360/24)) - 90), [size/2,size/2], (50/200)*size));
     ctx.moveTo(size/2, size/2);
 	
 	// ctx.beginPath();
