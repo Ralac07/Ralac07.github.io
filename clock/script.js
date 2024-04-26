@@ -154,11 +154,11 @@ setInterval(function(){
     //     ctx.moveTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (80/200)*size));
     //     ctx.lineTo(...getPos((((hour%12) * (360/12)) - 90), [size/2,size/2], (90/200)*size));
     // }
-
-    document.documentElement.style.setProperty("--a",a);
-    document.documentElement.style.setProperty("--b",b);
-    document.documentElement.style.setProperty("--c",d);
-    document.documentElement.style.setProperty("--d",e);
+    
+    document.querySelector("#myCanvas").style.setProperty("--a",a);
+    document.querySelector("#myCanvas").style.setProperty("--b",b);
+    document.querySelector("#myCanvas").style.setProperty("--c",d);
+    document.querySelector("#myCanvas").style.setProperty("--d",e);
     document.querySelector("#myCanvas").style.setProperty("opacity","1");
     a = (a + Math.random() * (n * 0.01528981518)) % 360;
     b = (b + Math.random() * (n * 0.03229182657)) % 360;
