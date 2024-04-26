@@ -29,6 +29,7 @@ console.log(Math.abs(window.screen.height / window.screen.width));
 var aspect = window.screen.height / window.screen.width;
 var aspectResult = Math.abs(1 - aspect);
 console.log(aspectResult);
+document.write(aspectResult);
 
 if (aspectResult < 0.1) {
   // #myCanvas,#outline,.temp
