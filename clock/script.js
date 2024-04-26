@@ -1,6 +1,3 @@
-
-//! Does not do anything yet
-//TODO Make these vars control element visibility
 let showHour = true;
 let showMinute = true;
 let showSecond = true;
@@ -10,8 +7,6 @@ let showNums = true;
 let showMainTick = true;
 let showMiniTick = true;
 let showCenterDot = true;
-
-
 
 // https://stackoverflow.com/a/43642346
 // x = radius * Math.cos(Math.PI * 2 * angle / 360);

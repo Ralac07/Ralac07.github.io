@@ -16,8 +16,6 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-//! Does not do anything yet
-//TODO Make these vars control element visibility
 var showHour = true;
 var showMinute = true;
 var showSecond = true;
