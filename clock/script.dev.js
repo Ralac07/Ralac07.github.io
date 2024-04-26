@@ -16,9 +16,18 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-// https://stackoverflow.com/a/43642346
+//! Does not do anything yet
+//TODO Make these vars control element visibility
+var showHour = true;
+var showMinute = true;
+var showSecond = true;
+var showBack = true;
+var showNums = true;
+var showMainTick = true;
+var showMiniTick = true; // https://stackoverflow.com/a/43642346
 // x = radius * Math.cos(Math.PI * 2 * angle / 360);
 // y = radius * Math.sin(Math.PI * 2 * angle / 360);
+
 function getPos(angle, center, radius) {
   // Define center and radius
   // const centerX = 100;

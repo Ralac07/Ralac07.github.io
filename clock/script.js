@@ -1,5 +1,13 @@
 
-
+//! Does not do anything yet
+//TODO Make these vars control element visibility
+let showHour = true;
+let showMinute = true;
+let showSecond = true;
+let showBack = true;
+let showNums = true;
+let showMainTick = true;
+let showMiniTick = true;
 
 
 
