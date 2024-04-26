@@ -8,18 +8,18 @@ let showMainTick = true;
 let showMiniTick = true;
 let showCenterDot = true;
 
-console.log(Math.abs(window.screen.height / window.screen.width));
+// console.log(Math.abs(window.screen.height / window.screen.width));
 let aspect = window.screen.height / window.screen.width;
 let aspectResult =Math.abs(1 - aspect);
-console.log(aspectResult);
-document.write(aspectResult);
+// console.log(aspectResult);
+// document.write(aspectResult);
 if (aspectResult < 0.1) {
     // #myCanvas,#outline,.temp
-    console.log("squarePage");
+    // console.log("squarePage");
     document.querySelector("#myCanvas,#outline,.temp").style.setProperty("height","100vh")
     document.querySelector("#myCanvas,#outline,.temp").style.setProperty("width","100vw")
 } else {
-    console.log("notSquarePage");
+    // console.log("notSquarePage");
 }
 
 

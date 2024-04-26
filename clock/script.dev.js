@@ -24,21 +24,19 @@ var showBack = true;
 var showNums = true;
 var showMainTick = true;
 var showMiniTick = true;
-var showCenterDot = true;
-console.log(Math.abs(window.screen.height / window.screen.width));
+var showCenterDot = true; // console.log(Math.abs(window.screen.height / window.screen.width));
+
 var aspect = window.screen.height / window.screen.width;
-var aspectResult = Math.abs(1 - aspect);
-console.log(aspectResult);
-document.write(aspectResult);
+var aspectResult = Math.abs(1 - aspect); // console.log(aspectResult);
+// document.write(aspectResult);
 
 if (aspectResult < 0.1) {
   // #myCanvas,#outline,.temp
-  console.log("squarePage");
+  // console.log("squarePage");
   document.querySelector("#myCanvas,#outline,.temp").style.setProperty("height", "100vh");
   document.querySelector("#myCanvas,#outline,.temp").style.setProperty("width", "100vw");
-} else {
-  console.log("notSquarePage");
-} // https://stackoverflow.com/a/43642346
+} else {} // console.log("notSquarePage");
+// https://stackoverflow.com/a/43642346
 // x = radius * Math.cos(Math.PI * 2 * angle / 360);
 // y = radius * Math.sin(Math.PI * 2 * angle / 360);
 
