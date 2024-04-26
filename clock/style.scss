@@ -2,7 +2,7 @@
 
 
 
-#myCanvas,#outline {
+#myCanvas,#outline,.temp {
 
     position: absolute;
     height: min(90vw,80vh);
@@ -13,6 +13,11 @@
     border-radius: 50%;
 
 }
+
+.temp  {
+    background: whitesmoke !important;
+}
+
 #myCanvas {
     --a:0;
     --b:0;
