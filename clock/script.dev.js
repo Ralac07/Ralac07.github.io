@@ -27,8 +27,10 @@ var showMiniTick = true;
 var showCenterDot = true;
 console.log(Math.abs(window.screen.height / window.screen.width));
 var aspect = window.screen.height / window.screen.width;
+var aspectResult = Math.abs(1 - aspect);
+console.log(aspectResult);
 
-if (Math.abs(1 - aspect) < 0.1) {
+if (aspectResult < 0.1) {
   // #myCanvas,#outline,.temp
   console.log("squarePage");
   document.querySelector("#myCanvas,#outline,.temp").style.setProperty("height", "100vh");
