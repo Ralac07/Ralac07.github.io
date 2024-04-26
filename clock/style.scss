@@ -1,12 +1,14 @@
 
 
-
-
 #myCanvas,#outline,.temp {
 
     position: absolute;
     height: min(90vw,80vh);
     width: min(90vw,80vh);
+
+    // height: 100vh;
+    // width: 100vw;
+
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);

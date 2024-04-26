@@ -8,6 +8,19 @@ let showMainTick = true;
 let showMiniTick = true;
 let showCenterDot = true;
 
+console.log(Math.abs(window.screen.height / window.screen.width));
+let aspect = Math.abs(window.screen.height / window.screen.width);
+if (0.9 < aspect & aspect < 1.1) {
+    // #myCanvas,#outline,.temp
+    console.log("squarePage");
+    document.querySelector("#myCanvas,#outline,.temp").style.setProperty("height","100vh")
+    document.querySelector("#myCanvas,#outline,.temp").style.setProperty("width","100vw")
+} else {
+    console.log("notSquarePage");
+}
+
+
+
 // https://stackoverflow.com/a/43642346
 // x = radius * Math.cos(Math.PI * 2 * angle / 360);
 

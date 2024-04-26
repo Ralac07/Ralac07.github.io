@@ -24,9 +24,21 @@ var showBack = true;
 var showNums = true;
 var showMainTick = true;
 var showMiniTick = true;
-var showCenterDot = true; // https://stackoverflow.com/a/43642346
+var showCenterDot = true;
+console.log(Math.abs(window.screen.height / window.screen.width));
+var aspect = Math.abs(window.screen.height / window.screen.width);
+
+if (0.9 < aspect & aspect < 1.1) {
+  // #myCanvas,#outline,.temp
+  console.log("squarePage");
+  document.querySelector("#myCanvas,#outline,.temp").style.setProperty("height", "100vh");
+  document.querySelector("#myCanvas,#outline,.temp").style.setProperty("width", "100vw");
+} else {
+  console.log("notSquarePage");
+} // https://stackoverflow.com/a/43642346
 // x = radius * Math.cos(Math.PI * 2 * angle / 360);
 // y = radius * Math.sin(Math.PI * 2 * angle / 360);
+
 
 function getPos(angle, center, radius) {
   // Define center and radius
