@@ -68,9 +68,9 @@ const ImageTools = () => (
   <LocationProvider>
     <ErrorBoundary>
       <Router>
-        {/* <Route path="/convert" component={Convert} /> */}
-        <Route path="/compress" component={ConvertImage} />
-        <Route path="/compress" component={ConvertImage} />
+        <Route path="/convert" component={ConvertImage} />
+        {/* <Route path="/compress" component={ConvertImage} /> */}
+        {/* <Route path="/compress" component={ConvertImage} /> */}
       </Router>
     </ErrorBoundary>
   </LocationProvider>
@@ -87,7 +87,7 @@ const PDFTools = () => (
     <ErrorBoundary>
       <Router>
         <Route path="/compress" component={CompressPDF} />
-        <Route path="/compress" component={CompressPDF} />
+        {/* <Route path="/compress" component={CompressPDF} /> */}
       </Router>
     </ErrorBoundary>
   </LocationProvider>
