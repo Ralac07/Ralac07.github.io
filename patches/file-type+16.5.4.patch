@@ -1,0 +1,13 @@
+diff --git a/node_modules/file-type/core.js b/node_modules/file-type/core.js
+index d653e66..33745db 100644
+--- a/node_modules/file-type/core.js
++++ b/node_modules/file-type/core.js
+@@ -1416,7 +1416,7 @@ async function _fromTokenizer(tokenizer) {
+ 
+ const stream = readableStream => new Promise((resolve, reject) => {
+ 	// Using `eval` to work around issues when bundling with Webpack
+-	const stream = eval('require')('stream'); // eslint-disable-line no-eval
++	const stream = require('stream');
+ 
+ 	readableStream.on('error', reject);
+ 	readableStream.once('readable', async () => {
