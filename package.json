@@ -21,6 +21,7 @@
     "@jimp/wasm-webp": "^1.6.0",
     "@okathira/ghostpdl-wasm": "^0.0.7",
     "@preact/preset-vite": "^2.9.4",
+    "@rollup/wasm-node": "^4.52.3",
     "@types/mime-db": "^1.43.6",
     "@types/node": "^24.5.2",
     "@types/qrcode": "^1.5.5",
@@ -40,8 +41,12 @@
     "vite-plugin-pwa": "^0.21.1",
     "workbox-window": "^7.3.0"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-arm64-gnu": "^4.0.0"
+  },
   "resolutions": {
     "sharp": "0.32.6",
-    "sharp-ico": "0.1.5"
+    "sharp-ico": "0.1.5",
+    "rollup": "npm:@rollup/wasm-node"
   }
 }
