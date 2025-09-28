@@ -1,7 +1,7 @@
 import PWABadge from "./PWABadge.tsx";
 import "./app.css";
-// import "simpledotcss/simple.css";
-import "./simplecss.scss";
+import "simpledotcss/simple.css";
+// import "./simplecss.scss";
 import {
   lazy,
   LocationProvider,
@@ -10,7 +10,9 @@ import {
   Route,
 } from "preact-iso";
 const Home = lazy(() => import("@/routes/Home/index.tsx"));
-const ConvertImage = lazy(() => import("@/routes/ConvertImage/index.tsx"));
+const ConvertImage = lazy(
+  () => import("@/routes/ConvertImage/index.tsx")
+);
 const NotFound = lazy(() => import("@/routes/404/index.tsx"));
 // import Home from "@/routes/Home/index.tsx";
 // import NotFound from "@/routes/404/index.tsx";

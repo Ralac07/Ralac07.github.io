@@ -17,6 +17,7 @@ export default function QR() {
   const [text, setText] = useState("");
   return (
     <>
+      <h3>WIP</h3>
       <QRCode text={text} />
       <div>
         <select
