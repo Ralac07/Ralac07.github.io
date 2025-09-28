@@ -1,6 +1,6 @@
 import PWABadge from "./PWABadge.tsx";
-import "./app.css";
 import "simpledotcss/simple.css";
+import "./app.css";
 // import "./simplecss.scss";
 import {
   lazy,
