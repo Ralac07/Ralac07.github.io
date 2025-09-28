@@ -19,6 +19,7 @@
     "@jimp/wasm-jpeg": "^1.6.0",
     "@jimp/wasm-png": "^1.6.0",
     "@jimp/wasm-webp": "^1.6.0",
+    "@okathira/ghostpdl-wasm": "^0.0.7",
     "@preact/preset-vite": "^2.9.4",
     "@types/mime-db": "^1.43.6",
     "@types/node": "^24.5.2",

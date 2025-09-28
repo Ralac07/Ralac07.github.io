@@ -6,3 +6,7 @@ export function downloadURI(uri: string, name: string) {
   link.click();
   // document.body.removeChild(link);
 }
+export function downloadFile(file: File) {
+  const url = URL.createObjectURL(file);
+  downloadURI(url, file.name);
+}

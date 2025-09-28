@@ -45,20 +45,20 @@ export default function QR() {
               />
             );
           }
-          if (qrType === "email") {
-            const [email, setEmail] = useState("");
-            const [subject, setSubject] = useState("");
-            const [body, setBody] = useState("");
-            return (
-              <input
-                type="email"
-                value={text}
-                onChange={(e) => {
-                  setEmail(e.currentTarget.value);
-                }}
-              />
-            );
-          }
+          // if (qrType === "email") {
+          //   const [email, setEmail] = useState("");
+          //   const [subject, setSubject] = useState("");
+          //   const [body, setBody] = useState("");
+          //   return (
+          //     <input
+          //       type="email"
+          //       value={text}
+          //       onChange={(e) => {
+          //         setEmail(e.currentTarget.value);
+          //       }}
+          //     />
+          //   );
+          // }
         })()}
       </div>
     </>

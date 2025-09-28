@@ -33,7 +33,7 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,svg,png,ico,wasm}"],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
-        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3 MB
+        maximumFileSizeToCacheInBytes: 20 * 1024 * 1024, // 20 MB
       },
 
       devOptions: {
@@ -57,6 +57,7 @@ export default defineConfig({
       "@jsquash/oxipng",
       "@jsquash/png",
       "@jsquash/webp",
+      "@okathira/ghostpdl-wasm",
     ],
   },
   worker: {

@@ -1347,6 +1347,11 @@
   dependencies:
     wasm-feature-detect "^1.2.11"
 
+"@okathira/ghostpdl-wasm@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@okathira/ghostpdl-wasm/-/ghostpdl-wasm-0.0.7.tgz#e306bf09524b306d8eb8d2bc26ad8e5dd7d78b05"
+  integrity sha512-pgOUo4SLTn6lWSeoMkidWNnXJO55wspJQmteXkH22+vFp+Ym8gvI7pSAuyPbmYItXSk86oLIaMW/Qi1D4up17A==
+
 "@parcel/watcher-android-arm64@2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.5.1.tgz#507f836d7e2042f798c7d07ad19c3546f9848ac1"

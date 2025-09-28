@@ -1,13 +1,13 @@
-export function ReadFile(
-  file: File
-): Promise<string | ArrayBuffer | null> {
-  return new Promise((resolve) => {
+export function ReadFile(file: File): Promise<ArrayBuffer> {
+  return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => {
-      resolve(reader.result);
+      if (reader.result instanceof ArrayBuffer) {
+        resolve(reader.result);
+      }
     };
     reader.onerror = () => {
-      resolve(null);
+      reject(reader.error);
     };
     reader.readAsArrayBuffer(file);
   });
