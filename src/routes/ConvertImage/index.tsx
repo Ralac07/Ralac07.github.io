@@ -1,14 +1,12 @@
 import "./style.css";
 import FilePicker from "$lib/Components/FilePicker";
-import {
-  ConvertImage,
-  withQuality,
-} from "@/lib/ImageConvert";
+import { ConvertImage, withQuality } from "@/lib/ImageConvert";
 import { useRef, useState } from "preact/hooks";
 import { downloadURI } from "@/lib/DownloadURI";
 import { mime_db, type Mime } from "@/mime-db.ts";
 import { toast } from "sonner";
 import { supportedMimesType } from "$lib/jimp.ts";
+import { supported_images } from "@/lib/mimes";
 
 export default function Convert() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -22,15 +20,7 @@ export default function Convert() {
         inputTagProps={{
           multiple: true,
         }}
-        supportedMimes={[
-          "image/bmp",
-          "image/gif",
-          "image/jpeg",
-          "image/png",
-          "image/tiff",
-          "image/webp",
-          "image/avif",
-        ]}
+        supportedMimes={supported_images}
         uploadCallback={async (files) => {
           setFiles([...files]);
           // [...files].map(async (f) => {

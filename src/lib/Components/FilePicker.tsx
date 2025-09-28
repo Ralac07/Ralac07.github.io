@@ -42,7 +42,10 @@ export default function FilePicker(props: {
       }}
     >
       <div class="dropbox-icon">📁</div>
-      <div class="dropbox-text">Drop files here</div>
+      <div class="dropbox-text">
+        Drop file{props?.inputTagProps?.multiple ?? false ? "(s)" : ""}{" "}
+        here
+      </div>
       <div class="dropbox-subtext">
         Supported formats:{" "}
         {props.supportedMimes

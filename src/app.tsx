@@ -20,6 +20,7 @@ import Layout from "$lib/Components/Layout";
 import Link from "$lib/Components/Link.tsx";
 import QR from "./routes/QR/index.tsx";
 import CompressPDF from "./routes/CompressPDF/index.tsx";
+import PDFCreator from "./routes/createPDF/index.tsx";
 
 export function App() {
   return (
@@ -59,7 +60,12 @@ export function App() {
 
 const ImageToolList = () => (
   <ul>
-    <li>
+    <li
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Link href="/image/convert">Image Convert</Link>
     </li>
   </ul>
@@ -77,8 +83,14 @@ const ImageTools = () => (
 );
 const PDFToolList = () => (
   <ul>
-    <li>
+    <li
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Link href="/pdf/compress">PDF Compressor</Link>
+      <Link href="/pdf/createpdf">PDF Creator</Link>
     </li>
   </ul>
 );
@@ -87,7 +99,7 @@ const PDFTools = () => (
     <ErrorBoundary>
       <Router>
         <Route path="/compress" component={CompressPDF} />
-        {/* <Route path="/compress" component={CompressPDF} /> */}
+        <Route path="/createpdf" component={PDFCreator} />
       </Router>
     </ErrorBoundary>
   </LocationProvider>
