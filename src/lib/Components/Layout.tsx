@@ -20,6 +20,7 @@ export default function Layout(
       </main>
       <footer>
         <code>{JSON.stringify(location)}</code>
+        <div>{import.meta.env.MODE}</div>
       </footer>
     </>
   );

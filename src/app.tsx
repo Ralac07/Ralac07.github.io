@@ -21,6 +21,7 @@ import Link from "$lib/Components/Link.tsx";
 import QR from "./routes/QR/index.tsx";
 import CompressPDF from "./routes/CompressPDF/index.tsx";
 import PDFCreator from "./routes/createPDF/index.tsx";
+import { WIP } from "./lib/Components/WIP";
 
 export function App() {
   return (
@@ -33,7 +34,7 @@ export function App() {
                 <Link href="/">Home</Link>
                 <Link href="/image">Image Tools</Link>
                 <Link href="/qr">QR Code</Link>
-                <Link href="/pdf">PDF</Link>
+                {WIP(<Link href="/pdf">PDF</Link>, <></>)}
               </>
             }
           >
@@ -42,8 +43,15 @@ export function App() {
               <Route path="/qr" component={QR} />
               <Route path="/image/*" component={ImageTools} />
               <Route path="/image" component={ImageToolList} />
-              <Route path="/pdf/*" component={PDFTools} />
-              <Route path="/pdf" component={PDFToolList} />
+              <Route
+                path={WIP("/pdf/*", "/wip/pdf/*")}
+                component={PDFTools}
+              />
+              <Route
+                path={WIP("/pdf", "/wip/pdf")}
+                component={PDFToolList}
+              />
+
               {/* Alternative dedicated route component for better TS support */}
               {/* <Route path="/profiles" component={Profiles} />
             <Route path="/profile/:id" component={Profile} /> */}
