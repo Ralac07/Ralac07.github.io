@@ -1,7 +1,8 @@
+//@ts-nocheck
 import "./style.css";
 import FilePicker from "@/lib/Components/FilePicker";
 import { mergeImagesToPDF } from "@/lib/CreatePDF";
-import VirtualList from "react-virtual-drag-list";
+// import VirtualList from "react-virtual-drag-list";
 import { downloadFile, downloadURI } from "@/lib/DownloadURI";
 import { supported_images } from "@/lib/mimes";
 import { useCallback, useState } from "preact/hooks";

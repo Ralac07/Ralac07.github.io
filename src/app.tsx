@@ -75,7 +75,7 @@ const ImageTools = () => (
     <ErrorBoundary>
       <Router>
         <Route path="/convert" component={ConvertImage} />
-        {/* <Route path="/compress" component={ConvertImage} /> */}
+        <Route path="/compress" component={ConvertImage} />
         {/* <Route path="/compress" component={ConvertImage} /> */}
       </Router>
     </ErrorBoundary>

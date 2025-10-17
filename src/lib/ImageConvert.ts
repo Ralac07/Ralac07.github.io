@@ -1,9 +1,20 @@
 import { type JimpMime } from "jimp";
+import heic2any from "heic2any";
 import {
   Jimp,
   supportedMimesType,
   type supportedMimes,
 } from "$lib/jimp.ts";
+
+export async function heicToPng(file: File): Promise<File> {
+  const blob = new Blob([await file.arrayBuffer()]);
+  const pngBlob = await heic2any({ blob, toType: "image/png" });
+
+  return new File(
+    [Array.isArray(pngBlob) ? pngBlob[0] : pngBlob],
+    file.name
+  );
+}
 
 export const withQuality = [
   "image/jpeg",
@@ -49,7 +60,11 @@ export async function ConvertImage(
 ): Promise<string>;
 export async function ConvertImage(
   file: File | ArrayBuffer,
-  targetMime: supportedMimesType | (typeof withQuality)[number] | withoutQuality | string,
+  targetMime:
+    | supportedMimesType
+    | (typeof withQuality)[number]
+    | withoutQuality
+    | string,
   options?: {
     output?: "buffer" | "dataURI";
     quality?: number; // 0-100 only for jpeg, webp, avif

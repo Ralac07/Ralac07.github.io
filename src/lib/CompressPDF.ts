@@ -1,5 +1,5 @@
 // @ts-ignore because no types available
-import loadWASM from "@okathira/ghostpdl-wasm";
+// import loadWASM from "@okathira/ghostpdl-wasm";
 // globalThis.prompt = (
 //   message?: string | undefined,
 //   _default?: string | undefined
@@ -7,9 +7,13 @@ import loadWASM from "@okathira/ghostpdl-wasm";
 //   // track where it was called from
 //   throw new Error("prompt is not supported");
 // };
+import loadWASM from "@okathira/ghostpdl-wasm";
+
 import { ReadFile } from "$lib/FileReader";
 
 export async function CompressPDF(file: File): Promise<File> {
+
+  // const loadWASM = (await import("@okathira/ghostpdl-wasm")).default;
   if (file.type !== "application/pdf") {
     throw new Error("File is not a PDF");
   }

@@ -1,6 +1,12 @@
 import "./style.css";
 import FilePicker from "$lib/Components/FilePicker";
-import { ConvertImage, withQuality } from "@/lib/ImageConvert";
+import { fromBuffer } from "file-type/browser";
+
+import {
+  ConvertImage,
+  heicToPng,
+  withQuality,
+} from "@/lib/ImageConvert";
 import { useRef, useState } from "preact/hooks";
 import { downloadURI } from "@/lib/DownloadURI";
 import { mime_db, type Mime } from "@/mime-db.ts";
@@ -20,7 +26,7 @@ export default function Convert() {
         inputTagProps={{
           multiple: true,
         }}
-        supportedMimes={supported_images}
+        supportedMimes={[...supported_images, "image/heic"]}
         uploadCallback={async (files) => {
           setFiles([...files]);
           // [...files].map(async (f) => {
@@ -88,6 +94,12 @@ export default function Convert() {
                   });
                   let file = files[i];
                   let convertedIMG;
+                  console.log(file);
+                  let f = await fromBuffer(await file.arrayBuffer());
+
+                  if (f?.mime === "image/heic") {
+                    file = await heicToPng(file);
+                  }
                   convertedIMG = await ConvertImage(
                     file,
                     outputType as string,
