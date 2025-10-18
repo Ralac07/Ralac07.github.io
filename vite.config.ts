@@ -6,43 +6,47 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 // import basicSsl from "@vitejs/plugin-basic-ssl";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     // basicSsl(),
     nodePolyfills({ include: ["buffer"] }),
     preact(),
-    VitePWA({
-      registerType: "autoUpdate",
-      injectRegister: false,
+    (() => {
+      if (mode !== "development") {
+        return VitePWA({
+          registerType: "autoUpdate",
+          injectRegister: false,
 
-      pwaAssets: {
-        disabled: false,
-        config: true,
-      },
+          pwaAssets: {
+            disabled: false,
+            config: true,
+          },
 
-      manifest: {
-        name: "Ryan's Collection of Tools",
-        short_name: "ryans-tools",
-        description:
-          "A collection of tools I put together that I believe should be free and shouldn't need to run on someone elses servers",
-        theme_color: "#ffffff",
-        display: "standalone",
-      },
+          manifest: {
+            name: "Ryan's Collection of Tools",
+            short_name: "ryans-tools",
+            description:
+              "A collection of tools I put together that I believe should be free and shouldn't need to run on someone elses servers",
+            theme_color: "#ffffff",
+            display: "standalone",
+          },
 
-      workbox: {
-        globPatterns: ["**/*.{js,css,html,svg,png,ico,wasm}"],
-        cleanupOutdatedCaches: true,
-        clientsClaim: true,
-        maximumFileSizeToCacheInBytes: 20 * 1024 * 1024, // 20 MB
-      },
+          workbox: {
+            globPatterns: ["**/*.{js,css,html,svg,png,ico,wasm}"],
+            cleanupOutdatedCaches: true,
+            clientsClaim: true,
+            maximumFileSizeToCacheInBytes: 20 * 1024 * 1024, // 20 MB
+          },
 
-      devOptions: {
-        enabled: true,
-        navigateFallback: "index.html",
-        suppressWarnings: true,
-        type: "module",
-      },
-    }),
+          devOptions: {
+            enabled: true,
+            navigateFallback: "index.html",
+            suppressWarnings: true,
+            type: "module",
+          },
+        });
+      }
+    })(),
   ],
   resolve: {
     alias: {
@@ -63,4 +67,4 @@ export default defineConfig({
   worker: {
     format: "es",
   },
-});
+}));

@@ -1,4 +1,3 @@
-import PWABadge from "./PWABadge.tsx";
 import "simpledotcss/simple.css";
 import "./app.css";
 // import "./simplecss.scss";
@@ -13,6 +12,7 @@ const Home = lazy(() => import("@/routes/Home/index.tsx"));
 const ConvertImage = lazy(
   () => import("@/routes/ConvertImage/index.tsx")
 );
+const PWABadge = lazy(() => import("./PWABadge.tsx"));
 const NotFound = lazy(() => import("@/routes/404/index.tsx"));
 // import Home from "@/routes/Home/index.tsx";
 // import NotFound from "@/routes/404/index.tsx";
@@ -43,14 +43,8 @@ export function App() {
               <Route path="/qr" component={QR} />
               <Route path="/image/*" component={ImageTools} />
               <Route path="/image" component={ImageToolList} />
-              <Route
-                path={WIP("/pdf/*")}
-                component={PDFTools}
-              />
-              <Route
-                path={WIP("/pdf")}
-                component={PDFToolList}
-              />
+              <Route path={WIP("/pdf/*")} component={PDFTools} />
+              <Route path={WIP("/pdf")} component={PDFToolList} />
 
               {/* Alternative dedicated route component for better TS support */}
               {/* <Route path="/profiles" component={Profiles} />
@@ -60,8 +54,8 @@ export function App() {
             </Router>
           </Layout>
         </ErrorBoundary>
+        {import.meta.env.MODE === "production" ? <PWABadge /> : <></>}
       </LocationProvider>
-      <PWABadge />
     </>
   );
 }
