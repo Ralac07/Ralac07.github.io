@@ -17,6 +17,7 @@ export default function PDFCompressor() {
   }
   return (
     <>
+      <h3>WIP</h3>
       <FilePicker
         supportedMimes={["application/pdf"]}
         uploadCallback={uploadCallback}
