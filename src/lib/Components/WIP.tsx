@@ -1,8 +1,4 @@
-export function WIP<T, Y = undefined>(node: T, alt: Y): T | Y {
+export function WIP<T>(node: T): T {
   console.trace("WIP() used");
-  if (import.meta.env.MODE === "development") {
-    return node;
-  } else {
-    return alt;
-  }
+  return node;
 }

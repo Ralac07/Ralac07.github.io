@@ -34,7 +34,7 @@ export function App() {
                 <Link href="/">Home</Link>
                 <Link href="/image">Image Tools</Link>
                 <Link href="/qr">QR Code</Link>
-                {WIP(<Link href="/pdf">PDF</Link>, <></>)}
+                {WIP(<Link href="/pdf">PDF</Link>)}
               </>
             }
           >
@@ -44,11 +44,11 @@ export function App() {
               <Route path="/image/*" component={ImageTools} />
               <Route path="/image" component={ImageToolList} />
               <Route
-                path={WIP("/pdf/*", "/wip/pdf/*")}
+                path={WIP("/pdf/*")}
                 component={PDFTools}
               />
               <Route
-                path={WIP("/pdf", "/wip/pdf")}
+                path={WIP("/pdf")}
                 component={PDFToolList}
               />
 
