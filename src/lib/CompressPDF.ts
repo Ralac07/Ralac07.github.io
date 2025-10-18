@@ -12,14 +12,16 @@ import loadWASM from "@okathira/ghostpdl-wasm";
 import { ReadFile } from "$lib/FileReader";
 
 export async function CompressPDF(file: File): Promise<File> {
-
   // const loadWASM = (await import("@okathira/ghostpdl-wasm")).default;
   if (file.type !== "application/pdf") {
     throw new Error("File is not a PDF");
   }
   const Module = await loadWASM();
+  console.log("loaded wasm");
   const buffer = await ReadFile(file);
+  console.log("read file");
   Module.FS.writeFile("example.pdf", new Uint8Array(buffer));
+  console.log("pdf saved to virtual FS");
 
   // Convert PDF to PDF (example settings)
   let resolution: number;
@@ -40,11 +42,11 @@ export async function CompressPDF(file: File): Promise<File> {
   compatibilityLevel = 1.3;
   PdfSettings = "/screen";
   r = 130;
-  Module.callMain([
-    "-q",
+  const params = [
+    // "-q",
     "-dNOPAUSE",
     "-dBATCH",
-    "-dQUIET",
+    // "-dQUIET",
     "-dSAFER",
     "-sProcessColorModel=DeviceGray",
     "-sColorConversionStrategy=Gray",
@@ -68,16 +70,21 @@ export async function CompressPDF(file: File): Promise<File> {
 
     "-sOutputFile=example_output.pdf",
     "example.pdf",
-  ]);
+  ];
+  console.log("calling ghostscript with params:", params);
+  // return new File([], "fakefile.pdf");
+  Module.callMain(params);
+  console.log("virtual pdf compressed");
 
+  // Read the output PDF file
+  const output = await Module.FS.readFile("example_output.pdf", {
+    encoding: "binary",
+  });
   const output_filename = file.name.replace(
     /\.pdf$/i,
     "_compressed.pdf"
   );
-  // Read the output PDF file
-  const output = Module.FS.readFile(output_filename, {
-    encoding: "binary",
-  });
+  console.log("pdf extracted from virtual FS");
   const output_file = new File([output], output_filename, {
     type: "application/pdf",
   });

@@ -3,12 +3,10 @@ import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 import path from "node:path";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-// import basicSsl from "@vitejs/plugin-basic-ssl";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
-    // basicSsl(),
     nodePolyfills({ include: ["buffer"] }),
     preact(),
     (() => {
@@ -26,7 +24,7 @@ export default defineConfig(({ mode }) => ({
             name: "Ryan's Collection of Tools",
             short_name: "ryans-tools",
             description:
-              "A collection of tools I put together that I believe should be free and shouldn't need to run on someone elses servers",
+              "A collection of tools I put together that I believe should be free and shouldn't need to run on someone else's server",
             theme_color: "#ffffff",
             display: "standalone",
           },
