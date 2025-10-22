@@ -96,6 +96,7 @@ const PDFToolList = () => (
     </li>
   </ul>
 );
+
 const PDFTools = () => (
   <LocationProvider>
     <ErrorBoundary>
